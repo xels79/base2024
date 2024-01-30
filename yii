@@ -1,5 +1,6 @@
-#!/opt/php/8.0/bin/php
+#!/usr/bin/php8.0
 <?php
+//#!/opt/php/8.0/bin/php
 /**
  * Yii console bootstrap file.
  *
