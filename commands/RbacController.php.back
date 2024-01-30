@@ -1,0 +1,178 @@
+<?php
+/*
+ * Проверка способ 1
+ * public function actionAbout()
+ *{
+ *   if (!\Yii::$app->user->can('about')) {
+ *       throw new ForbiddenHttpException('Access denied');
+ *   }
+ *   return $this->render('about');
+ *}
+ * ************************
+ * 
+ * Способ 2
+ * public function beforeAction($action)
+ *{
+ *   if (parent::beforeAction($action)) {
+ *       if (!\Yii::$app->user->can($action->id)) {
+ *           throw new ForbiddenHttpException('Access denied');
+ *       }
+ *       return true;
+ *   } else {
+ *       return false;
+ *   }
+ *}
+ * ************************
+ * Команда генерации ключей
+ * ./yii rbac/init
+ * ************************
+ * 
+ */
+
+
+namespace app\commands;
+
+use yii\console\Controller;
+use \app\rbac\UserGroupRule;
+use \app\rbac\UserProfileOwnerRule;
+ 
+class RbacController extends Controller
+{
+    private $roles=[
+      'guest'  
+    ];
+    private $actionNames=[
+        'login',
+        'logout',
+        'error',
+        'sign-up',
+        'index',
+        'view',
+        'update',
+        'delete',
+        'create',
+        'contact'
+    ];
+    public function actionInit()
+    {
+        $action=[];
+        $authManager = \Yii::$app->authManager;
+ 
+        // Create roles
+        echo "Добавляем группы [guest,user,moder,admin]\r\n";
+        $guest  = $authManager->createRole('guest');
+        $user  = $authManager->createRole('user');
+        $moder = $authManager->createRole('moder');
+        $admin  = $authManager->createRole('admin');
+ 
+        // Create simple, based on action{$NAME} permissions
+        echo "Создаём экшены\r\n";
+        foreach ($this->actionNames as $actionN){
+            echo $actionN.", ";
+            $action[$actionN]=$authManager->createPermission($actionN);
+        }
+        /*
+        $login  = $authManager->createPermission('login');
+        $logout = $authManager->createPermission('logout');
+        $error  = $authManager->createPermission('error');
+        $signUp = $authManager->createPermission('sign-up');
+        $index  = $authManager->createPermission('index');
+        $view   = $authManager->createPermission('view');
+        $update = $authManager->createPermission('update');
+        $delete = $authManager->createPermission('delete');
+        $create = $authManager->createPermission('create');
+        */
+ 
+        // Add permissions in Yii::$app->authManager
+        echo "\r\nДобовляем полномочия:\r\n";
+        foreach (array_keys($action) as $actionN){
+            echo $actionN.", ";
+            $authManager->add($action[$actionN]);
+        }
+        /*
+        $authManager->add($login);
+        $authManager->add($logout);
+        $authManager->add($error);
+        $authManager->add($signUp);
+        $authManager->add($index);
+        $authManager->add($view);
+        $authManager->add($update);
+        $authManager->add($delete);
+        $authManager->add($create);
+        */
+ 
+        // Add rule, based on UserExt->group === $user->group
+        echo "\r\n".'Добовляем правила основанные на UserExt->role == $user->role'."\r\n";
+        $userGroupRule = new UserGroupRule();
+        $authManager->add($userGroupRule);
+ 
+        // Add rule "UserGroupRule" in roles
+        $guest->ruleName  = $userGroupRule->name;
+        $user->ruleName  = $userGroupRule->name;
+        $moder->ruleName = $userGroupRule->name;
+        $admin->ruleName  = $userGroupRule->name;
+        
+        // Add roles in Yii::$app->authManager
+        $authManager->add($guest);
+        $authManager->add($user);
+        $authManager->add($moder);
+        $authManager->add($admin);
+ 
+        // Add permission-per-role in Yii::$app->authManager
+        // Guest
+        echo "Уровень 4 'guest':\r\n";
+       
+        $authManager->addChild($guest, $action['login']);
+        $authManager->addChild($guest, $action['logout']);
+        $authManager->addChild($guest, $action['error']);
+        $authManager->addChild($guest, $action['sign-up']);
+        $authManager->addChild($guest, $action['index']);
+        $authManager->addChild($guest, $action['view']);
+       
+        // user
+        echo "Уровень 3 'user':\r\n";
+        
+        $authManager->addChild($user, $action['update']);
+        
+        $authManager->addChild($user, $guest);
+        
+        // TALENT
+        echo "Уровень 2 'moder':\r\n";
+
+        $authManager->addChild($moder, $action['update']);
+        $authManager->addChild($moder, $action['create']);
+        $authManager->addChild($moder, $guest);
+ 
+        // Admin
+        echo "Уровень 1 'admin':\r\n";
+        $authManager->addChild($admin, $action['delete']);
+        //$authManager->addChild($admin, $action['contact']);
+        $authManager->addChild($admin, $moder);
+        $authManager->addChild($admin, $user);
+    
+        
+        // add the rule
+        /* Проверка По доп параметру
+         * 
+         * public function actionUpdate($id)
+         *{
+         *      if (!\Yii::$app->user->can('updateOwnProfile', ['profileId' => \Yii::$app->user->id])) {
+         *        throw new ForbiddenHttpException('Access denied');
+         *   }
+         * // ...
+         *} 
+         */
+        echo "Добавляем правило с доп. параметром для 'user':\r\n 'profileId'==Yii::".'$app->user->id'."\r\n";
+        $userProfileOwnerRule = new UserProfileOwnerRule();
+        $authManager->add($userProfileOwnerRule);
+
+        $updateOwnProfile = $authManager->createPermission('updateOwnProfile');
+        $updateOwnProfile->ruleName = $userProfileOwnerRule->name;
+        $authManager->add($updateOwnProfile);
+
+        $authManager->addChild($user, $updateOwnProfile);
+        $authManager->addChild($moder, $updateOwnProfile);
+        echo "Готово.\r\n";
+
+    }
+}
