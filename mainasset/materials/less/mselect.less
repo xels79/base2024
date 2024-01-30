@@ -1,0 +1,141 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 13.01.2021, 12:37:55
+    Author     : Алесандр
+*/
+@highlight-darken:8;
+@hover-darken:7%;
+
+@mat-select-background-color:#FBFBFB;
+@mat-select-border-color:darken(@mat-select-background-color, 20);
+
+@mat-select-active-background-color:#DADAEE;
+@mat-select-active-highlight-background-color:darken(@mat-select-active-background-color,@highlight-darken);
+
+@mat-select-highlight:darken(@mat-select-background-color,@highlight-darken);
+
+@mat-select-border:1px solid @mat-select-border-color;
+
+.mat-select-bunner{
+    position: absolute;
+    top:0;left:0;
+    width: 100%;
+    height:100%;
+    display: block;
+    z-index:20000;
+    background-color: gray;
+    opacity: 0.16;
+}
+
+.mat-select-container{
+    z-index:20001;
+    position:absolute;
+    width: 50%;
+    display: block;
+    background-color: #fff;
+    >div{
+        display: block;
+        width: 100%;        
+    }
+    >.mat-select-informer{
+        position: relative;
+        height: 6px;
+        >div{
+            display: block;
+            position: absolute;
+            background-color: #bbFFbb;
+            height: 100%;
+            top:0;
+            left:0;
+        }
+    }
+    >.mat-select-header{
+        position: relative;
+        height: 32px;
+        >input{
+            width: 100%;
+            height: 100%;
+            background-color: lighten(@mat-select-background-color, 10);
+            border: 1px solid lighten(@mat-select-border-color,10);
+            padding: 2px 4px;
+            position: absolute;
+            top:0;left:0;
+        }
+        >canvas{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            display: block;
+        }
+    }
+    >.mat-select-table{
+        max-height: 250px;
+        background-color: @mat-select-background-color;
+        overflow: hidden;
+        overflow-y: auto;
+        >div{
+            display: block;
+            width: 100%;
+            padding: 2px 4px;
+            border-left: @mat-select-border;
+            border-right: @mat-select-border;
+            border-top:@mat-select-border;
+            overflow: hidden;
+            white-space: nowrap;
+            max-height: 30px;
+            &:last-child{
+                border-bottom: @mat-select-border;
+            }
+            >span{
+                font-size: 12px;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                >.mat-select-highlight{
+                    background-color: @mat-select-highlight;
+                    font-style: italic;
+                }
+                &:not(:last-child){
+                    &:after{
+                        content:';';
+                    }
+                }
+                &:not(:first-child){
+                    margin-left: 10px;
+                }
+            }
+            >.mat-select-right{
+                min-width: 60px;
+                text-align: left;
+                float:right;
+                    &:after{
+                        content:'р';
+                    }                
+            }
+            &:hover{
+                background-color: darken(@mat-select-background-color,@hover-darken);
+                >span>.mat-select-highlight{
+                    background-color: darken(@mat-select-highlight,@hover-darken);
+                }
+            }
+        }
+        >.mat-select-active{
+            background-color: @mat-select-active-background-color;
+            >span>.mat-select-highlight{
+                background-color: @mat-select-active-highlight-background-color;
+            }
+            &:hover{
+                background-color: darken(@mat-select-active-background-color,@hover-darken);
+                >span>.mat-select-highlight{
+                    background-color: darken(@mat-select-active-highlight-background-color,@hover-darken);
+                }
+            }
+        }
+    }
+}

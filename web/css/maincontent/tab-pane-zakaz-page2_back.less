@@ -1,0 +1,275 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29.10.2018, 17:09:55
+    Author     : Александр
+*/
+
+.tab-pane-zakaz-page2(){
+    .mradio-input{
+        max-width: 230px;
+    }
+    >.info-string{
+        background-color: #c5c5c5;
+        padding-left: 0;
+        padding-right: 0;
+        >div{
+            &:first-child{
+                vertical-align: bottom;
+                >label{
+                    color:red;
+                }
+            }
+        }
+    }
+    >.mat-middle-zone{
+        min-height:360px;
+        max-height:360px;
+        overflow-y:auto;
+        .block-table{
+            margin-top: 5px;
+            min-width: 390px;
+            font-size: 0.85em;
+            >tbody{
+                >tr{
+                    >.with-mater{
+                        >div{
+                            width: 215px;
+                            min-width:215px;
+                            >label,>span,>input{
+                                display: inline-block;
+                            }
+                            >label{
+                                min-width: 100px;
+                                max-width: 100px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
+                            >span,>input{
+                                min-width: 80px;
+                                max-width: 80px;                                
+                            }
+                        }
+                    }
+                    >th{
+                        padding-left: 5px;
+                        text-align: left;
+                        &:first-child{
+                            text-align: center;
+                            font-size: 1em;
+                            color:#ff6600;
+                            min-width: 135px;
+                        }
+                    }
+                    &:nth-child(2){
+                        >td,>th{
+                            padding-top: 10px;
+                        }
+                    }
+                    &:first-child{
+                        >td,>th{
+                            &:first-child{
+                                min-width: 127px;
+                            }
+                        }
+                        >th{
+                            text-align: center;
+                            font-size: 1.7em;
+                            color:#ff6600;
+                        }
+                    }
+                    >.small-d{
+                        color:#ff6600;
+                        text-align:center;
+                        padding-bottom:5px;
+                    }
+                    >.small{
+                        white-space: normal;
+                        font-size: 0.55em;
+                    }
+                    >td{
+                        &:first-child{
+                            text-align: center;
+                        }
+                        >img{
+                            width: 24px;
+                            height: 24px;
+                            opacity: 0.5;
+                            &:hover{
+                                opacity: 1;
+                            }
+                        }
+                        .btn{
+                            width:235px !important;
+                            color:#ff6600;
+                            margin: 3px auto;
+                            font-weight:bolt;
+                        }
+                        [readonly]{
+                            background-color: rgb(235, 235, 228);
+                        }
+                        >input{
+                            font-size:0.8em;
+                            margin: 2px;
+                            max-width:70px;
+                        }
+                        >.m-radio{
+                            margin-top: 5px;
+                            >.on{
+                                &:first-child{
+                                    >span{
+                                        color: #fff;
+                                    }
+                                }                                        
+                            }
+                            >span{
+                                >span{
+                                    padding: 2px 5px;
+                                    margin: 2px 4px;
+                                    font-size: 1em;
+                                }
+                                &:first-child{
+                                    >span{
+                                        background-color: #e51717;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                >.b-bottom{
+                    >th,>td{
+                         &:not(:first-child){
+                            border-bottom: 1px solid #888;
+                        }
+                    }                                                                                    
+                }
+                >.back-gray{
+                    >th,>td{
+                         &:not(:first-child){
+                            background-color: #EAEAEA;
+                        }
+                    }                                                                                                                            
+                }
+                >.border{
+                    >th,>td{
+                        &:last-child{
+                            border-right:  1px solid #888;
+                        }
+                        &:nth-child(2){
+                            border-left: 1px solid #888;
+                        }
+                    }
+                    &:not(:first-child){
+                        >th,>td{
+                            &:first-child{
+                                max-width: 200px;
+                            }                            
+                        }
+                    }
+                    &:first-child{
+                        >th,>td{
+                            &:not(:first-child){
+                                border-top: 1px solid #888;
+                            }
+                        }
+                    }
+                    &:last-of-type{
+                        >th,>td{
+                             &:not(:first-child){
+                                border-bottom: 1px solid #888;
+                            }
+                        }                                            
+                    }
+                }
+            }
+        }
+        >div{
+            vertical-align: top;
+            >div{
+                vertical-align: top;
+                >table{
+                    margin-right: 5px;
+                    &:not(:first-child){
+                        padding-left: 25px;
+                    }
+                }
+            }
+            &:first-child{
+                /*background-color: red;*/
+                min-width: 514px;
+                >div{
+                    &:not(:first-child){
+                        padding-left: 10px;
+                        border-left: solid 1px;
+                    }
+                    &:last-child{
+                        border-left:none;
+                    }
+                    display: table-cell;
+                    .dialog-control-group{
+                        width:210px;
+                        margin: 0;
+                        >label,>span,>input{
+                            display: inline-block;
+                            font-size:0.85em;
+                        }
+                        >label,>span{
+                            overflow: hidden;
+                            white-space: nowrap;
+                            padding: 2px;
+                        }
+                        >label{
+                            max-width: 90px;
+                            min-width: 91px;
+                        }
+                        >span,>input{
+                            max-width: 90px;
+                            min-width: 91px;
+                        }
+                        >div{
+                            display:table;
+                            font-size:.75em;
+                            >label{
+                                display: table-cell
+                            }
+                        }
+                    }                                
+                }
+            }
+        }
+    }
+    .with-mater{
+        .btn-group{
+            vertical-align: top;
+            padding-left:20px;
+            .btn{
+                margin: 2px 10px;
+                height: auto;
+                width: 30px !important;
+            }                            
+        }
+        >div{
+            margin: 0;
+            padding: 0;
+            
+            >[readonly]{
+                /*min-height: 30px;*/
+                padding-top: 4px!important;
+                padding-bottom: 4px!important;
+            }
+        }        
+    }
+    >div{
+        padding: 4px 10px;
+        display: table;
+        width: 100%;
+        .with-mater();
+        >div{
+            display: table-cell;
+        }
+    }    
+}

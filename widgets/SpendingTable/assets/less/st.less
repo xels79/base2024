@@ -1,0 +1,158 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 12.02.2021, 16:50:23
+    Author     : Алесандр
+*/
+.st{
+    display: table-cell;
+/*    &:first-of-type{
+        float: left;
+    }*/
+    vertical-align: top;
+    padding-right:25px;
+    .table{
+        >tbody>tr>td,>tfoot>tr>td{
+            padding: 0;
+            >span{
+                margin-top: 3.5px;
+                display: block;
+            }
+            >.btn{
+                padding: 5px 14px;
+                margin: 0;
+                width: 100%;
+                display: block;
+                border-radius: 0;
+                &:hover{
+                    background-color: #E9E9E9;
+                }
+            }
+        }
+        >tbody>tr>td{
+            >.btn{
+                >.glyphicon-trash{
+                    color:#FFA0A0;
+                }
+                &:hover{
+                    >.glyphicon-trash{
+                        color:#FF1010;
+                    }                    
+                }
+            }
+        }
+        >tfoot>tr>td{
+            >.btn{
+                >.glyphicon-plus{
+                    color:#C0FFC0;
+                }
+                &:hover{
+                    >.glyphicon-plus{
+                        color:#00FF00;
+                    }                    
+                }
+            }
+        }
+        >tbody{
+            .st-to-remove{
+                background-color: #FFEAEA;
+            }
+        }
+    }
+    .st-edit{
+        display: block;
+        border:1px solid transparent;
+        background-color: transparent;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        &:hover{
+            border-color: #bbFFbb;
+        }
+        &:focus,&:active{
+            border-color: #05FF05;
+        }
+    }
+    .stHasError{
+        border-color:#FFBBBB;
+        &:hover{
+            border-color: #FF5656;
+        }
+        &:focus,&:active{
+            border-color: #FF0000;
+        }
+    }
+}
+/**
+ * Цвета колонок
+*/
+.st-zptd{
+    background-color: #DDFFDD;
+}
+.st-percenttd{
+    background-color: #AAFFAA;
+}
+.st-spend-in-monthtd{
+    background-color:darkorchid;
+    color:#FFF;    
+}
+
+.st-spends{
+    width:500px;
+    .table>tbody>tr>td{
+        &:nth-child(2){
+            font-weight: bold;
+        }
+    }
+}
+.st-wages{
+    width:700px;
+    .table{
+        >tbody>tr>td,>tfoot>tr>td{
+            padding: 3.25px 4px;
+        }
+    }
+    .table>tbody>tr>td{
+        &:first-child{
+            font-weight: bold;
+        }
+    }
+}
+.st-main{
+    width:400px;
+    padding-top: 25px;
+    .table{
+        >tbody>tr>th,>tfoot>tr>th{
+            min-width: 250px;
+        }
+        >tbody{
+            >tr>td{
+                height: 33.22px;
+            }
+            >.st-zp{
+                >td{
+                    .st-zptd();
+                }
+            }
+            >.st-percent{
+                >td{
+                    .st-percenttd();
+                }
+            }
+            >.st-spend-in-month{
+                >td{
+                    .st-spend-in-monthtd();
+                }
+            }
+            >.st-total-month{
+                >td{
+                    background-color: yellow;
+                }
+            }
+        }
+    }
+}
+

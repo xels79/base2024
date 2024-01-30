@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 23.11.2018, 17:19:34
+    Author     : Александр
+*/
+.suppradio{
+    font-size: 0.8em;
+    >.mradio-input{
+        
+        >div{
+            >div{
+                min-width: 73px;
+                &:last-child{
+                    min-width: 20px;
+                }
+                margin-left: 3px!important;
+                >span{
+                    padding: 2px 0 3px 15px;
+                }
+            }
+        }
+    }
+}
+.mradio-input{
+    padding: 2px 4px;
+    font-size: 0.9em;
+    max-width: 245px;
+    overflow: hidden;
+    white-space: nowrap;
+    >div{
+        padding-top: 4px;
+        >.on{
+            >span{
+                background: url(pic/rb_checked.png) no-repeat left!important;
+                background-size: 14px 14px!important; 
+                color:LimeGreen;
+                font-weight:bold;
+            }
+        }
+        >div{
+            display: inline-block;
+            min-width: 70px;
+            &:not(:first-child){
+                margin-left: 10px;
+            }
+            &:first-child{
+                margin-left: 5px;
+            }
+            >span{
+                padding-left: 15px;
+                background: url(pic/rb_unchecked.png) no-repeat left;
+                background-size: 14px 14px!important;
+                &:hover{
+                    background: url(pic/rb_hover.png) no-repeat left;
+                    /*background-size: 14px 14px;*/
+                }
+            }
+        }
+    }
+}

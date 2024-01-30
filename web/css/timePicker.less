@@ -1,0 +1,86 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18.01.2019, 22:42:50
+    Author     : Александр
+*/
+
+.time-picker{
+    position: absolute;
+    /*width: 120px;*/
+    height: 190px;
+    background-color: whitesmoke;
+    border: 1px solid #101010;
+    z-index: 100000;
+    >div{
+        height: 100%;
+        display: inline-block;
+        &:not(:nth-child(2)){
+            width: 58px;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            >div{
+                position: absolute;
+                left:0px;
+                >.step1{
+                    background-color:#F0F0F0;
+                    >div{
+                        &:not(:nth-child(2)){
+                            background-color:#D0D0D0;
+                        }
+                    }
+                }
+                >.step2{
+                    background-color:#E0E0E0;
+                    >div{
+                        &:not(:nth-child(2)){
+                            background-color:#A0A0A0;
+                        }
+                    }
+                }
+                >.step3{
+                    background-color:#D0D0D0;
+                    >div{
+                        &:not(:nth-child(2)){
+                            background-color:#808080;
+                        }
+                    }
+                }
+
+                >div{
+                    width: 58px;
+                    text-align:center;
+                    height:20px;
+                    >div{
+                        &:not(:nth-child(2)){
+                            margin: 0 auto;
+                            height: 1px;
+                            width: 80%;  
+                            background-color:#F0F0F0;
+                        }
+                        &:nth-child(2){
+                            text-align: center;
+                            width: 100%; 
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(2){
+            width: 2px;
+            >div{
+                &:not(:nth-child(2)){
+                    height: 80px;
+                    background-color: #B0B0B0;
+                }
+                &:nth-child(2){
+                    height: 22px;
+                }
+            }
+        }
+    }
+}

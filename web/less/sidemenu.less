@@ -1,0 +1,150 @@
+@import "_variables.less";
+@s_menu_wt :38px;
+@spA:0.5s;
+/*.side-nav-informer{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 1030;
+    border-right:1px solid #aaa;
+    >div{
+        border-top: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+        background-color: white;
+        text-align: left;
+        padding-left: 5px;
+    }
+}*/
+.side-nav{
+    @wth:120px;
+    z-index: 1029;
+    width: @s_menu_wt;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    left: 0px;
+    top: 50px;
+    bottom: 0px;
+    position: absolute;
+    
+    padding-bottom: 52px;
+/*    height: 100%;
+    min-height: (@wrAndSMenu)-100;*/
+    .side-nav-conteiner{
+        position:relative;
+        height: 100%;
+        border-right: 1px solid #AAA;
+        >ul{
+            &:first-child{
+                .side-nav-informer{
+                    >a{
+                        overflow: visible;
+                        >p{
+                            z-index: 1032;
+                            /*position: absolute;*/
+                            border-right:1px solid #aaa;
+                            border-top: 1px solid #aaa;
+                            border-bottom: 1px solid #aaa;
+                            border-bottom-right-radius: 5px;
+                            border-top-right-radius: 5px;
+                            background-color: white;
+                            height: 20px !important;;
+                        }
+                        >.caret{
+                            display: none;
+                        }
+                    }
+                }
+                li{
+                    transition: @spA margin-left ease-out;
+                    border-bottom: 1px solid gray;
+                    width: 100%;
+                    a{
+                        font-size: .8em;
+                        width: @s_menu_wt;
+                        /*padding: 3px 8px 3px 12px;*/
+                        padding: 3px 12px;
+                        overflow:hidden;
+                        >span{
+                            background-color: transparent;
+                            font-size: 1.2em;
+                            padding-right: 4px;
+                            max-width: @s_menu_wt;
+                            min-width: @s_menu_wt;
+                            min-height: 13px;
+                        }
+                        >p{
+                            display: inline-block;
+                            width: 1px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            margin: 0;
+                            margin-left: -13px;
+                            margin-top:4px;
+                            padding: 0 4px;
+                            height: 100%;
+                        }
+                    }
+                    >a:hover{
+                        color: #fff;
+                        background: #428bca;
+                        >p{
+                            background: #428bca;
+                        }
+                    }
+                    &.active> a{
+                        color: #fff !important;
+                        background: #428bca;            
+                    }
+                }
+                >li.dropdown{
+                    border-bottom: none;
+                    >ul.dropdown-menu {
+                         position: relative;
+                         min-width: @wth;
+                         margin: 0;
+                         padding: 0;
+                         border: none;
+                         border-radius: 0;
+                         background-color: transparent;
+                         box-shadow: none;
+                         -webkit-box-shadow: none;
+                         >li{
+                            border-left: none;
+                            border-right: none;
+                            border-top: none;
+                            >a{
+                                color: #337ab7;
+                                padding: 3px 8px 3px 14px;
+                                &:hover,&:focus{
+                                     color: #fff;
+                                     background-color: #428bca;
+                                }
+                            }
+                             .active>a{
+                                 color: #fff;
+                             }
+                         }
+                    }
+                } 
+            }
+            &:last-child{
+                position: absolute;
+                bottom: 0px;
+                background-color: white;
+                >li{
+                    >a{
+                        padding: 4px 4px;
+    /*                    padding-left:4px;
+                        padding-right:4px;*/
+                        >img{
+                            margin-left: 4px;
+                            width: (@s_menu_wt)-16;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

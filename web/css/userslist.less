@@ -1,0 +1,119 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02.10.2017, 14:40:17
+    Author     : alex
+*/
+
+.user-list{
+    margin: 10px 20px;
+}
+.user-edit{
+    margin: 10px 20px;
+    .btn-group{
+        margin-left: 30px;
+    }
+    .form-group{
+        margin-bottom: 5px;
+        font-size: 0.8em;
+    }
+    .form-control{
+        line-height: 1.1;
+        padding: 6px 2px;
+        height: 28px;
+    }
+    
+}
+#user-list-tab-tab0{
+    height: 342px;
+}
+#userlistPjax{
+    table{
+        >tbody{
+            >tr{
+                &:hover{
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+    .selected{
+        background-color: #eee;
+    }
+}
+.accsses-setup{
+    min-height:250px;
+    padding:5px 10px;
+    width:744px;
+    h3{
+        text-align: center;
+    }
+    .accsses-setup-content,.accsses-setup-menu{
+        display: inline-block;
+    }
+    .panel{
+        display: inline-block;
+        font-size:0.8em;
+        padding: 0;
+        margin: 5px;
+        .panel-body{
+            height: 177px;
+            overflow:hidden;
+        }
+        .panel-heading,.panel-footer{
+            padding: 3px 5px;
+        }
+    }
+    .accsses-setup-menu{
+        max-width: 140px;
+        select{
+            height: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+    }
+    .accsses-setup-content{
+        padding: 2px 10px;
+        margin: 0px 5px;
+        /*clear: both;*/
+        /*border:1px solid #bbb;*/
+        /*border-radius: 5px;*/
+        height: 275px;
+        width: 558px;
+        .panel{
+            width: 255px;
+            .panel-footer{
+                .btn{
+                    width: 28px!important;
+                }
+            }
+            .panel-body{
+                height: 177px;
+                overflow:hidden;
+                select{
+                    height: 100%;
+                    width: 100%;
+                    >option{
+                        font-size: 0.9em;
+                        color: #bbb;
+                    }
+                    [value]{
+                        font-size: 1em;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+    .dropup,.dropdown{
+        >ul{
+            font-size:0.9em;
+            height: 240px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    }
+}

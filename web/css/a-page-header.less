@@ -1,0 +1,157 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29.10.2018, 17:19:49
+    Author     : Александр
+*/
+
+.a-page-header{
+    width: 100%;
+    padding-bottom: 9px;
+    margin: (@navbar-height)+5 0 15px 0;
+    /*border-bottom: 1px solid #eeeeee;*/
+    >tbody{
+        >tr{
+            .currencies{
+                >p{
+                    margin-left: 10px;
+                    >span{
+                        &:not(:nth-child(2)){
+                            padding-left: 35px;
+                        }
+                        >img{
+                            max-width: 48px;
+                        }
+                        >i{
+                            margin-left: 2px;
+                            >span{
+                                /*margin-left: 3px;*/
+                                padding: 5px 10px 7px;
+                                font-size: 1em;
+                            }
+                            >b{
+                                padding-left: 5px;
+                                min-width: 51px;
+                            }
+                        }
+                    }
+                }
+            }
+            &:first-child{
+                >td{
+                    border-top: none!important;
+                }
+            }
+            >td{
+                &:nth-child(1){
+/*                    @media(max-width: @screen-phone){
+                        display:none;
+                    }*/
+                    width: 600px;
+                    max-width:600px;    
+                    >div{
+                        &:first-child{
+                            width: 420px;
+                            max-width: 421px;
+                            float: left;
+                        }
+                        &:nth-child(2){
+                            @wdth:160px;
+                            display:inline-block;
+                            width:@wdth;
+                            margin-left:15px;
+                            >label{
+                                width:(@wdth)-4;
+                                display: block;
+                                margin-top: -12px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                text-align: center;
+                            }
+                            >input{
+                                font-size: 18px;
+                                width:(@wdth)-4;
+                                display: block;
+                                margin-left: auto;
+                                margin-right: auto;
+                                border-radius: 4px;
+                                padding: 4px;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    /*width: 100%;*/
+                    text-align: right;
+                    vertical-align: middle;
+                }
+                &:nth-child(3){
+                    width: 200px;
+                    min-width: 180px;
+                    .nav-buttons{
+                        span{
+                            /*width: 99px*/
+                        }
+                        padding-bottom: 2px;
+                    }
+                }
+                .header{
+/*                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    vertical-align: middle;*/
+                    margin-right: 20px;
+/*                    margin-top: auto;
+                    margin-bottom: auto;*/
+                    /*text-align: right;*/
+                    color: #be2e21;
+                    font-size: 32px;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+}
+.a-main-table{
+    .pic1{
+        width: 100%;
+        min-width: 258px;
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-origin: padding-box;
+        background-size: contain;
+    }
+    >tbody{
+        >tr{
+            td{
+                border-top: none;
+            }
+        }
+    }
+}
+.a-list{
+    list-style: none;
+    >li{
+        >a{
+            height:35px;
+            width: 165px;
+            font-size: 16px;
+            font-weight: bold;
+            display:block;
+        }
+        margin-bottom: 15px;
+        min-width: 270px;
+    }
+    padding-bottom: 15px;
+}
+.a-list-inline{
+    padding-top:10px;
+    >li{
+        display: inline-block;
+        margin-right: 15px;
+    }
+}
+

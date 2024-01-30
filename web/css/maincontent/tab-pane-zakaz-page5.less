@@ -1,0 +1,161 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 17.12.2018, 13:34:53
+    Author     : Александр
+*/
+
+.tab-pane-zakaz-page5(){
+    >.table{
+        margin: 0 10px;
+        width:98%;
+        .bg-warning{
+            background-color: #ffffcc;
+        }
+        >tbody{
+            >tr{
+                >td,>th{border: none;}
+                >th{color:#f60; text-align: center;}
+                >td{
+                    >.ui-progressbar{
+                        min-width: 270px;
+                    }
+                    .list-group{
+                        min-height: 220px;
+                        max-height: 220px;
+                        max-width: 250px;
+                        background-color: #fdfdfd;
+                        border:solid 1px #BBB;
+                        border-radius: 3px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        overflow-y: scroll;
+                        margin:0;
+                        padding:0;
+                        .progress-label{
+                           padding:2px 3px;
+                           position:absolute;
+                           width:100%;
+                           span{
+                               &:last-child{
+                                   float: right;
+                                   margin-right: 20px;
+                               }
+                               &:first-child{
+                                   position: absolute;
+                                   max-width: 150px;
+                                   overflow: hidden;
+                                   white-space: nowrap;
+                               }
+                           }
+                       }
+                       >.list-group-item{
+                           display: table;
+                           width: 100%;
+                            padding: 2px 8px;
+                            .ui-progressbar{
+                                font-size: 0.8em;
+                            }
+                            .ui-progressbar-value{
+                                /*opacity: 0.5;*/
+                            }
+                            >a{
+                                display:table-cell;
+                                &:first-child{
+                                    max-width: 194px;
+                                    //width:200px;
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    /*float: left;*/
+                                }
+/*                                &:last-child{
+                                    margin:0;
+                                    padding: 1px 0;
+                                    margin-left: 2px;
+                                    width: 18px!important;
+                                    float:right;
+                                    height: 19px;
+                                    color:white;
+                                }*/
+                            }
+                        }
+                    }
+                    &:first-child,&:last-child{
+                        max-width: 174px;
+                    }
+                }
+                &:nth-child(2){
+                    .progress-label{
+                        position: absolute;
+                        padding-left: 190px;
+                    }
+                }
+            }
+        }
+    }
+    .ui-progressbar-value{
+        background-color: #ccc;
+    }
+    .d-enter{
+        border:solid 2px!important;
+    }
+    .d-done{
+        border:dotted 2px!important;
+    }
+    .f-action{
+        min-width: 170px;
+        max-width: 250px;
+        min-height: 100px;
+        max-height: 100px;
+        background-color:gainsboro;
+        background-image: url('/pic/bluray-disc.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        border:solid 1px #BBB;
+        border-radius: 3px;
+        text-align: center;
+        padding-top:25px;
+        color: whitesmoke;
+        font-weight: bolder;
+        cursor: pointer;
+        opacity: 0.7;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    .img-view{
+        min-height: 265px;
+        max-height: 265px;
+        min-width: 270px;
+        max-width: 483px;
+        border:solid 1px #BBB;
+        border-radius: 3px;
+        overflow: hidden;
+        display: block;
+        >iframe{
+            max-width: 396px;
+            max-height: 264px;
+            width: 396px;
+            height: 196px;
+            margin: auto;
+            display: block;                        
+        }
+        >img{
+            height: 100%;
+            max-width: 396px;
+            max-height: 264px;
+            margin: auto;
+            display: block;
+        }
+        >h3{
+            text-align: center;
+            display: block;
+            margin: 20px auto;
+        }
+    }
+    
+}

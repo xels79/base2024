@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20.06.2016, 0:35:30
+    Author     : Александер
+*/
+
+.aListBox{
+    font-size: 14px;
+    padding: 12px 15px;
+    width: 100%;
+}
+.aListBox .list-group-item{
+    padding: 3px 15px;
+    width: 100%;
+}
+.aListBox .list-group{
+    min-width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    height:200px;
+}
+.aListBox .control{ 
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.aListBox .list-group-item a{
+    text-decoration: none;
+    color: #555;
+    width: 100%;
+}
+.aListBox .list-group-item .btn-group{
+    float: right;
+}
+.aListBox .list-group-item:hover{
+    background-color: #eee;
+}
+.aListBox .list-group-item:hover a{
+    color: #333;
+    font-weight: bold;
+}

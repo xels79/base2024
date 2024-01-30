@@ -1,0 +1,428 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29.10.2018, 17:26:12
+    Author     : Александр
+*/
+
+/*
+ * Класы вьюх
+*/
+@user_list_background_color: #66c2d1;
+.dialog-list{
+    font-size: 16px;
+    min-height: 100px;
+    .tab-content{
+        padding-left:10px;
+        padding-right:10px;
+    }
+    /*background-color: @user_list_background_color;*/
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:hover,
+    .nav-tabs > li.active > a:focus{
+        background-color: lighten(@user_list_background_color, 15%);
+    }
+    .nav-tabs > li > a:hover{
+        background-color: lighten(@user_list_background_color, 15%);
+    }
+    .nav > li > a{
+        padding: 4px 15px;
+        font-size: 0.8em;
+    }
+    .tab-content{
+        background-color: white;
+        .btn{
+            margin: 10px 10px;
+        }
+        margin-bottom: 10px;
+        .table{
+            
+        }
+    }
+    .btn{
+        padding: 1px 3px;
+        height: 22px;
+        width: 100px !important;
+        font-size: 0.8em;
+    }
+    .form-add{
+        margin: 10px 10px;
+        padding: 5px;
+        background-color: white;
+    }
+    .dialog-row{
+        width: 100%;
+/*        margin: 5px 0 2px;*/
+        min-height: 8px;
+        margin: 0;
+        display:block;
+        vertical-align:top;
+        text-align: center;
+        button{
+            margin: 5px 0 2px;
+        }
+    }
+    .dialog-control-group,.dialog-control-group-inline{
+        display:block;
+        padding: 0;
+        margin:0;
+        &:not(:first-child){
+            >label{
+                /*margin-left: -10px;*/
+            }
+            >input,>select,>textarea,>.dialog-form-control,>.activeDD{
+                /*margin-left: -60px;*/
+            }
+        }
+        label,input,select,textarea,.dialog-form-control,.add-on{
+            display: inline-block;
+        }
+        label{
+            margin: 0px 4px;
+            font-size: 0.9em;
+            text-align: right;
+            padding: 0;
+        }
+        input,select,textarea,.dialog-form-control,.add-on{
+            padding: 0;
+            margin: 0px 4px;
+            font-size: 0.9em;
+        }
+        textarea{
+            margin: 3px 4px -4px;
+        }
+        input,.dialog-form-control,.add-on{
+            padding: 0 4px;
+        }
+        select{
+            padding: 0px 4px;
+        }
+        .add-on{
+            /*margin-right: -100px;*/
+            padding-left: 1px;
+            margin-left: 1px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .dialog-form-control{
+            background-color: whitesmoke;
+        }
+        >.glyphicon {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 5px;
+            color:green;
+            border-radius: 10px;
+            background-color: #55b1c0;
+            border:1px solid #339fad;
+            &:hover{
+                background: whitesmoke
+            }
+            &:active{
+                padding: 4px;
+            }
+        }
+    }
+    .dialog-control-group-inline{
+        display: inline-block;
+        label{
+            margin: 4px;
+        }
+    }
+
+    .dialog-address{
+        height: 80px;
+    }
+    .dialog-error{
+        font-size: 0.6em;
+        color:red;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+    .has-success{
+        input,textarea,select{
+            border-color: green;
+            background-color: #f4fff4;
+        }        
+    }
+    .has-error{
+        input,textarea,select{
+            border-color: red;
+            background-color: #fff4f4;
+        }
+    }
+    .dialog-col-80{
+        width: 80px;
+    }
+    .dialog-col-100{
+        width: 100px;
+    }
+    .dialog-col-120{
+        width: 120px;
+    }
+    .dialog-col-160{
+        width: 160px;
+    }
+    .dialog-col-180{
+        width: 180px;
+    }
+    .dialog-col-190{
+        width: 190px;
+    }
+    .dialog-col-200{
+        width: 200px;
+    }
+    .dialog-col-220{
+        width: 220px;
+    }
+    .dialog-col-240{
+        width: 240px;
+    }
+    .dialog-col-260{
+        width: 260px;
+    }
+    .dialog-col-50{
+        min-width: 50%;
+        width: 50%;
+        display: table-cell;
+        &:first-child{
+            padding-left: 10px;
+        }
+    }
+    .dialog-col-hf{
+        min-width: 45%;
+        width: 45%;
+        padding: 0;
+        margin: 0;
+        display: table-cell;
+/*        &:first-child{
+            padding-left: 10px;
+        }*/
+    }
+    .dialog-col-30p{
+        .dialog-col-160{
+            width: 42%;
+        }
+        .dialog-col-200{
+            width: 49%;
+        }
+        width: 33%;
+        display: table-cell;
+        &:first-child{
+            padding-left: 10px;
+        }
+    }
+    .dialog-100perc{
+        margin-bottom:10px;
+        label{
+            max-width: 22%;
+            min-width: 22%;
+        }
+        input{
+            width: 70%;
+        }
+    }
+    .detail-view{
+        th{
+            max-width: 300px;
+            width: 250px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        td{
+            background-color: whitesmoke;
+        }
+    }
+    .grid-view{
+        font-size:0.8em;
+    }
+    .t-cell{
+        display: table-cell;
+    }
+}
+.field-manager-foto{
+    button,img{
+        display: block;
+        margin: 2px auto !important;
+    }
+    img{
+        background-color: white;
+        width: 130px;
+        height: 130px;
+        max-width: 130px;
+        max-height: 130px;
+        border: 1px solid gray;
+    }
+    .thumbnail{
+        width: 130px;
+        height: 130px;
+        margin: auto;
+        img{
+            width: auto;
+            height: auto;
+            max-width: 120px;
+            max-height: 120px;
+            border:none;
+        }
+    }
+    .glyphicon-remove{
+        float:right;
+        margin-top: -75px;
+    }
+}
+.field-manager-foto,.field-rekvizitour-signatureCEO,.field-rekvizitour-stamp{
+    .dialog-control-group{
+        span:last-child{
+            color:red;
+            margin-left: 5px;
+            vertical-align: middle;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+.field-rekvizitour-signatureCEO,.field-rekvizitour-stamp{
+    .btn{
+        width: 200px !important;
+        height: 54px !important;
+        white-space: normal;
+        height: auto;
+    }
+    .dialog-control-group{
+        img{
+            margin-left: 5px;
+            border: 1px solid gray;
+        }
+    }
+}
+.field-rekvizitour-signatureCEO{
+    .dialog-control-group{
+        img{
+            max-height: 60px;
+            max-width: 155px;
+        }
+    }
+}
+
+.field-rekvizitour-stamp{
+    .dialog-control-group{
+        img{
+            max-height:240px;
+            max-width: 155px;
+            background-color: white;
+        }
+    }
+} 
+.dialog-rekvizit{
+    .dialog-row:first-child{
+        border-bottom: 1px solid gray;
+    }
+}
+
+.setup-rekvizit{
+    margin-top: 26px;
+    .field-rekvizitour-ceo, .field-rekvizitour-namechiefaccountant{
+        label{
+            width: 100%;
+            text-align: center;
+        }
+        input{
+            width: 100%;
+        }
+    }
+/*    .field-rekvizitour-ceo:first-child {
+        .dialog-control-group{
+            margin-top: -20px;
+        }
+    }*/
+}
+
+.firm-rekvizit{
+    padding-top:24px;
+    #rekvizit-ceo{
+        margin-top:-20px;
+        label{
+            width: 100%;
+            text-align: center;
+        }
+        input{
+            margin: 0 auto;
+            display: block;
+            width: 80%;
+        }
+    }
+    .passport-info{
+        margin-left: 30px;
+
+        >.dialog-row{
+        margin-top: 30px;
+        >label{
+                font-weight: normal;
+            }
+        }
+        label{
+            text-align: left;
+        }
+        .dialog-col-160{
+            width: auto;
+            min-width: 80px;
+        }
+        #rekvizit-passportgivendate, #rekvizit-certificategivendate{
+            label{
+                width: 120px;
+            }
+            input{
+                width: 160px;
+            }
+        }
+    }
+}
+.setup-manager{
+    font-size:0.9em;
+    .table{
+        .table{
+            background-color: transparent;
+            td{
+                border:none;
+            }
+        }
+    }
+}
+#ourMangersListPjax{
+    .grid-view{
+    }
+}
+/*
+    Таблицы
+*/
+/*.table{
+    >tbody,
+    >thead{
+        >tr{
+            &:first-child{
+                >th{
+                    background-color: #fffe01;
+                }
+            }
+        }
+    }
+}*/
+#zakazchik-list{
+    .table{
+        >tbody,
+        >thead{
+            >tr{
+                >th{
+                    &:nth-child(1){
+                        width: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

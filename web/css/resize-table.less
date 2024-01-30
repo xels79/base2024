@@ -1,0 +1,302 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 11 мая 2020 г., 20:54:08
+    Author     : Александр
+*/
+@rbColor: #CCCCCC;
+@celHeight:34px;
+@headerHeaderCellBackGround:#d4edda;
+@headerCellBackGround:transparent;
+
+@bodyOddCellBackGround:#FFFFFF;
+@bodyEvenCellBackGround:darken(@bodyOddCellBackGround,5%);
+@bodyOddHeaderCellBackGround:#CCCCCC;
+@bodyEvenHeaderCellBackGround:darken(@bodyOddCellBackGround,5%);
+
+@bodyReadyOddCellBackGround: rgb(82,249,21);
+@bodyReadyEvenCellBackGround:darken(@bodyReadyOddCellBackGround,8%);
+
+.resize-has-sub-cell(@ht){
+    height: (@ht*@celHeight);
+    >.resize-cell{
+        height: (@ht*@celHeight);
+        >.resize-controls{
+            height: (@ht*@celHeight);
+        }
+    }            
+}
+
+.resize-table{
+    position: relative;
+    text-align: left;
+    background-color: white;
+    position:relative;
+    float:left;
+    >.resize-header{
+        >.resize-row{
+           &:first-child{
+                >div{
+                    border-top:1px solid @rbColor;
+                    >.resize-controls{
+                        width:4px;
+                    }
+                }
+            }
+            >div{
+                >.resize-controls{
+                    cursor: col-resize;
+                    &:hover{
+                        background-color: @rbColor;
+                    }
+                }
+            }
+            >.resize-cell-header{
+                background-color: @headerHeaderCellBackGround;
+            }
+            >.resize-cell{
+                background-color: @headerCellBackGround;
+            }
+        }
+    }
+    >div{
+        white-space: nowrap;
+        position:relative;
+        >.resize-row{
+            position:relative;
+            height: @celHeight;
+            white-space: nowrap;
+            box-sizing: border-box;
+			>.speed{
+				background-color:#FFc1c1!important;
+			}
+ 
+            .resize-center{
+                text-align: center;
+                >button,>select{
+                    width: 100%;
+                }
+                
+            }
+            >div{ 
+                display: inline-block;
+                border-bottom:1px solid @rbColor;
+                border-right: 1px solid @rbColor;
+                &:first-child{
+                    border-left: 1px solid @rbColor;
+                }
+                >.resize-controls{
+                    position: absolute;
+                    right:0;
+                    top:0;
+                    height: @celHeight;
+                    width: 1px;
+                }
+                >.on{
+                    background-color: @rbColor;
+                }
+            }
+            >.resize-cell{
+                .info-line{
+                    cursor: default;
+                    text-align: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    position: relative;
+                    text-align: center;                            
+                    &:not(:first-child){
+                        border-top: 1px solid #bbb;
+                    }
+                    >div{
+                        text-align: center;
+                        margin-right: 77px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    >span{
+                        &:not(.glyphicon){
+                            &:nth-child(2){
+                                position: absolute;
+                                right: 30px;
+                                top:0;
+                            }
+                        }                                
+                    }
+                }
+                .has-flag{
+                    >.glyphicon{
+                        opacity: 0.7;
+                        /*float: right;*/
+                        position: absolute;
+                        right: 3px;
+                        top:3px;
+                        cursor: pointer;
+                        @aSpeen:0.2s;
+                        -webkit-transition: all @aSpeen ease-in-out;
+                        -moz-transition: all @aSpeen ease-in-out;
+                        -o-transition: all @aSpeen ease-in-out;
+                        -ms-transition: all @aSpeen ease-in-out;
+                        transition: all @aSpeen ease-in-out;
+                        /*font-size: 0.9em;*/
+                        &:hover{
+                            @scl:1.3;
+                            opacity: 1;
+                            -webkit-transform: scale(@scl);
+                               -moz-transform: scale(@scl);
+                                 -o-transform: scale(@scl);
+                                    transform: scale(@scl);
+                        }
+                    }
+                }
+
+            }
+            >.resize-cell,>.resize-cell-header{
+                padding: 6px;
+                position: relative;
+                white-space: nowrap;
+                overflow: hidden;
+                height: @celHeight;
+                text-overflow: ellipsis;
+            }
+            .has-info{
+                text-align: center;
+                >div{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    >span{
+                        padding: 0 5px;
+                        white-space: nowrap;
+                        display: inline-block;
+                        &:nth-child(1){
+                            color:white;
+                            background-color: #959595;                                    
+                        }
+                        &:nth-child(2){
+                            color:white;
+                            background-color: #00c500;
+                        }
+                        &:nth-child(3){
+                            color:white;
+                            background-color: #f74d4d;
+                        }
+                    }                                                    
+                }
+            }
+
+        }
+        >.resize-has-sub-cell{
+            .resize-has-sub-cell(1.5);
+        }
+        >.resize-has-sub-cell1{
+            .resize-has-sub-cell(2.2);
+        }
+        >.resize-has-sub-cell2{
+            .resize-has-sub-cell(2.8);
+        }
+    }
+    >.resize-tfooter{
+        .pagination{
+            >.active{
+                >a{
+                    z-index:0;
+                }
+            }
+            >li{
+                >a{
+                    min-width: 52px;
+                    text-align: center;
+                }
+                >.dropdown-menu{
+                    max-height: 300px;
+                    overflow: hidden;
+                    overflow-y: auto;
+                    white-space: nowrap;
+                }
+            }
+            >.input-group{
+                &:last-child{
+                    >.form-control{
+                        border-left: none;
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                        max-width: 180px
+                    }
+                }
+            }
+        }
+    }
+    >.resize-tbody{
+        >.resize-row{
+            &:nth-child(odd){
+                >.resize-cell{
+                    background-color: @bodyOddCellBackGround;
+                }
+                >.resize-cell-header{
+                    background-color: @bodyOddHeaderCellBackGround;
+                }
+            }
+            &:nth-child(even){
+                >.resize-cell{
+                    background-color: @bodyEvenCellBackGround;
+                }                
+                >.resize-cell-header{
+                    background-color: @bodyEvenHeaderCellBackGround;
+                }
+            }
+            &:hover{
+                &:nth-child(odd){
+                    >.resize-cell{
+                        background-color: darken(@bodyOddCellBackGround,9%)!important;
+                    }
+                    >.resize-cell-header{
+                        background-color: @bodyOddHeaderCellBackGround!important;
+                    }
+                }                
+                &:nth-child(even){
+                    >.resize-cell{
+                        background-color: darken(@bodyEvenCellBackGround,9%)!important;
+                    }                
+                    >.resize-cell-header{
+                        background-color: @bodyEvenHeaderCellBackGround!important;
+                    }
+                }
+            }
+        }
+        >.ready{
+            &:nth-child(odd){
+                >.resize-cell{
+                    background-color: @bodyReadyOddCellBackGround;
+                }
+            }
+            &:nth-child(even){
+                >.resize-cell{
+                    background-color: @bodyReadyEvenCellBackGround;
+                }                
+            }
+            &:hover{
+                &:nth-child(odd){
+                    >.resize-cell{
+                        background-color: darken(@bodyReadyOddCellBackGround,19%)!important;
+                    }
+                }                
+                &:nth-child(even){
+                    >.resize-cell{
+                        background-color: darken(@bodyReadyEvenCellBackGround,19%)!important;
+                    }                
+                }
+            }
+        }
+    }
+    >.resize-caption{
+        >div{
+            >small{
+            }
+        }
+    }
+}

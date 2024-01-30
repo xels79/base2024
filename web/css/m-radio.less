@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 24.10.2018, 16:47:05
+    Author     : Александр
+*/
+@border-c:#222;
+@border-r:5px;
+.m-radio{
+    padding:2px;
+    font-size: 0.9em;
+    .disabled{
+        cursor: not-allowed;
+        >span,>input{
+            cursor: not-allowed!important;
+        }
+    }
+    .on{
+        >span{
+            opacity: 1!important;
+        }
+    }
+    >span{
+        cursor: pointer;
+        padding: 2px 0;
+        
+        border-bottom: 1px solid @border-c;
+        border-top: 1px solid @border-c;
+        border-right: 1px solid @border-c;
+        &:first-child{
+            padding-left: 0px;
+            border-left: 1px solid @border-c;
+            border-bottom-left-radius: @border-r;
+            border-top-left-radius: @border-r;
+            >span{
+                border-bottom-left-radius: ((@border-r)-1);
+                border-top-left-radius: ((@border-r)-1);
+            }
+        }
+        &:nth-last-child(2){
+            padding-right: 0px;
+            border-top-right-radius: @border-r;
+            border-bottom-right-radius: @border-r;
+            >span{
+                border-top-right-radius: ((@border-r)-1);
+                border-bottom-right-radius: ((@border-r)-1);                
+            }
+        }
+        >span{
+            cursor: pointer;
+            padding: 2px 3px;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            &:hover{
+                opacity: 0.4;
+            }
+        }
+    }
+}

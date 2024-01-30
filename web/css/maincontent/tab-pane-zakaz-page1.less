@@ -1,0 +1,217 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29.10.2018, 17:09:02
+    Author     : Александр
+*/
+
+.tab-pane-zakaz-page1(){
+    >div{
+        &:first-child{
+            padding: 4px 10px;
+            display: table;
+            width: 100%;
+            >div{
+                margin: 0;
+                padding: 0;
+                display: table-cell;
+            }
+        }
+    }
+    >.table{
+        margin-bottom: 0px;
+        >tbody{
+            >.bord{
+                >td,>th{
+                    &:first-child{
+                        border-left: 1px solid #aaaaaa;
+                    }
+                    &:last-child{
+                        border-right: 1px solid #aaaaaa;
+                    }
+                }
+            }
+            >.last-b{
+                >td,>th{
+                    background-color: #ccc;
+                    border-bottom:  1px solid #aaaaaa;
+                }
+                font-size: 1.12em!important;
+            }
+            >.first-b{
+                th:not(.mid){
+                    border-top:  1px solid #aaaaaa;
+                }
+            }
+            >tr{
+                >td,>th{
+                    border: none;
+                }
+                >.mid{
+                    border-left: 1px solid #aaaaaa;
+                    border-right: 1px solid #aaaaaa;
+                }
+                &:first-child{
+                    >td{
+                        height: 245px;
+                        >.table{
+                            max-height: 220px;
+                            overflow: hidden;
+                            overflow-y: scroll;
+                            white-space: nowrap;
+                            display: block;
+                            min-width: 100%;
+                            margin-bottom:5px;
+                            >tbody{
+                                >tr{
+                                    >td,>th{
+                                        padding: 2px 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:not(:first-child){
+                    >td,>th{
+                        /*border: none;*/
+                        /*padding: 0;*/
+                        >.btn{
+                            margin: 4px;
+                        }
+                    }
+                    font-size: 0.8em;
+                }
+                &:last-child{
+                    >.mid{
+                        border-left: none;
+                        border-right: none;
+                        border-top: 1px solid #aaaaaa;
+                    }
+                    >th,>td{
+                        vertical-align: middle;
+                    }
+                    >th{
+                        &:not(:first-child){
+                            color: #000;
+                            text-align: right;
+                        }
+                    }
+                }
+                >th{
+                    font-size: 0.8em;
+                    text-align: center;
+                    color:red;
+                }
+                >td{
+                    >p{
+                        margin: 0 6px;
+                        padding: 2px 3px;
+                        background-color: #dedede;
+                        border:1px solid #888888;
+                        cursor: text;
+                        width: 101px;
+                    }
+                    >input{
+                        width: 110px;
+                        margin: 0;
+                    }
+                    >.off{
+                        opacity: 0.2;
+                    }
+                }
+            }
+        }
+    }
+    .podryad-info{
+        font-size: 0.9em;
+        th{
+            font-size: 0.75em;
+            &:nth-child(1){
+                min-width: 60px;
+            }
+        }
+
+        td{
+            &:last-child{
+                padding: 0 10px;
+            }
+            font-size: 0.82em;
+            &:nth-child(2){text-align: center;}
+            .btn{
+                margin: 0px 4px;
+                padding: 0px 3px;
+                height: auto;
+                width: 30px!important;
+                >span{
+                    padding-top: 2px;
+                    font-size: 1.8em;
+                    color:white;
+                }
+            }
+            img{
+                max-height: 18px;
+                padding: 2px;
+            }
+            >.activeDD{
+                max-width: 150px;
+                min-width:135px;
+                >input{
+                    max-width: 120px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+            .popover{
+                .popover-content{
+                    padding: 3px 3px;
+                    font-size: 0.8em;
+                }
+                .arrow{
+                    left:-10px;
+                }
+            }
+            >.is-hovered{
+                background-color:gainsboro;
+            }
+            >div{
+                display:table;
+                border-collapse: separate;
+                border-color:#aaaaaa;
+                >input,>p{
+                    max-width: 55px;
+                    display: table-cell;
+                    margin-right: -1px;
+                }
+                >p{
+                    border: .8px solid;
+                    min-width: 54px;
+                    border-color: inherit;
+                }
+                >.add-on{
+                    border: .8px solid;
+                    border-left: none;
+                    padding: 2px;
+                    display: table-cell;
+                    border-color: inherit;
+                }
+            }
+        }
+    }
+    .dropdown{
+        margin: 4px 10px; 
+        >.dropdown-menu{
+            font-size: 0.8em;
+            max-height: 195px;
+            overflow: hidden;
+            overflow-y: auto;
+            a{
+                padding: 2px 2px;
+            }
+        }
+    }
+
+}

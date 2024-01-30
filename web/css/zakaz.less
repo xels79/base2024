@@ -1,0 +1,285 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29.10.2018, 17:31:00
+    Author     : Александр
+*/
+@import "maincontent/maincontent.less";
+.zakaz-popup-base{
+    font-size: 14px;
+    background-color: @m_dialog_background_color;
+    border-radius: 0;
+    /*position: relative;*/
+    a[href="#tab-pane-zakaz-page6"],a[href="#tab-pane-zakaz-page7"]{
+        position: relative;
+        .info-warning{
+            position: absolute;
+            top:-7px;
+            right:-12px;
+            width: 30px;
+        }
+    }
+    .ui-autocomplete{
+        max-height: 225px;
+        overflow: hidden;
+        white-space: nowrap;
+        overflow-y: auto;
+    }    
+    .hasError{
+        border-color:transparent;
+        box-shadow: none;
+    }
+    .dialog-control-group{
+        display: inline-block;
+        width:255px;
+        >label{
+            display:block;
+            text-align: left;
+        }
+        >.activeDD,>input{
+            height: 20px;
+        }
+        >input{
+            margin-left: 2px;
+        }
+        margin: 4px 20px;
+    }
+    .small-gr{
+        @sgrWidth:150px;
+        @inpW: (@sgrWidth)-50;
+        max-width: @sgrWidth!important;
+        min-width: @sgrWidth!important;
+        >input{
+            width: @inpW;
+        }
+    }
+
+    .re-print{
+        clear: none!important;
+        float: right;
+        >div{
+            width:258px;
+            height: 60px;
+            min-width: 258px;
+            min-height: 60px;   
+            background: url(pic/reprint1.png) no-repeat center;
+            background-size: contain;
+            &:hover{
+                background: url(pic/reprint2.png) no-repeat center;
+                background-size: contain;
+            }
+        }
+        >.on{
+            background: url(pic/reprint3.png) no-repeat center;
+            background-size: contain;
+            &:hover{
+                background: url(pic/reprint4.png) no-repeat center;
+                background-size: contain;
+            }                
+        }
+     }
+
+    .ui-dialog-buttonpane{
+        background: transparent;
+        padding: 2px 10px;
+        /*min-height:43px;*/
+        margin-top:-5px;
+        .ui-dialog-buttonset{
+            >button{
+                background-color: @btnMainBackgr;
+                border-radius: 8px;
+                font-size: .8em;
+                min-width: 50px;
+                margin: 2px 10px;
+            }
+            >a{
+                margin: 2px 10px;
+                &:hover{
+                    cursor:pointer;
+                } 
+            }
+        }
+    }
+
+}
+.zakaz-list-popup{
+    .zakaz-popup-base;
+    min-width:610px;
+    
+    .ui-dialog-content{
+        min-width:580px;
+        >div{
+            font-size: 0.9em;
+            min-height: 200px;
+            height: 100%;
+            margin: 1px;
+            padding: 3px 10px 0 10px;
+            background-color: whitesmoke;
+            display: table-cell;
+            min-width: 250px;
+            >h4{
+                margin-top: 3px;
+                margin-bottom: 3px;
+            }
+            >.c-list,>.content-header,>.dialog-control-group-inline{
+                width: 100%;
+                padding: 3px 10px 0px 10px;
+            }
+            >.c-list{
+                margin-bottom: 10px;
+                max-height: 230px;
+                overflow-y: auto;
+                border: 1px solid #c0c0c0;
+            }
+            >.content-header{
+                >p{
+                    font-size: 1.2em;
+                    display: inline-block;
+                    width: 50%;
+                }
+            }
+            .colors-setup{
+                >div{
+                    margin: 10px 5px 0px 20px;
+                    span,input{
+                        display: inline-block;
+                        &:last-child{
+                            float:right;
+                            margin-left: 5px;
+                            width: 80px;
+                            height: 20px;
+                            background-color: white;
+                            border:1px solid;
+                        }
+                    }
+                }
+            }
+            >.dialog-control-group-inline{
+                >label{
+                    font-weight: normal;
+                    font-size: 1.2em;
+                }
+                >input{
+                    max-width: 100px;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+.zakaz-popup{
+    .zakaz-popup-base;
+    min-width:990px;
+    min-height:525px;
+    .ui-dialog-content{
+        background-color: @m_dialog_background_color!important;
+    }
+    #zakazAddNew_dialog{
+        min-width:743px;
+        min-height:404px;
+    }
+    .attention{
+        width: 100%;
+        textarea{
+            width: 100%;
+            resize: none;
+            /*background-color: #ffefef;*/
+            color: #ff0000;
+        }
+    }
+    .comments-area{
+        > textarea{
+            width: 850px;
+            resize: none;
+        }
+    }
+    .dialog-control-group{
+        min-width: 265px;
+        clear: both;
+        &:first-child{
+            float: left;
+            margin-left: 5px;
+        }
+    }
+    .dialog-control-group-inline{
+        .activeDD>input,>input{
+            margin: 2px 0 !important;
+            padding: 2px 4px !important;
+            margin-top: 3px;
+        }
+        >span:nth-child(2){
+            min-height: 19px;
+            /*vertical-align: bottom;*/
+            margin: 2px 0 !important;
+            padding: 2px 4px !important;
+        }
+        >label{
+            vertical-align: bottom;
+        }
+
+        >span:nth-child(2),[readonly]{
+            border: none;
+            background-color: #DDD!important;
+        }
+    }
+    .activeDD{
+        font-size: inherit;
+        background-color: whitesmoke;
+        display: inline-table;
+        border-collapse: separate;
+        >input, >a{
+            display: table-cell;
+        }
+        >a{
+            padding: 2px;
+            float: right;
+        }
+        .activeDD-load{
+            float:right;
+            margin-top:5px;
+        }
+    }
+    .header2{
+        font-size: 0.85em;
+        .border{
+            border-top: 1px solid #ddd;
+            width: 90%;
+            display: block;
+            margin-top: 6px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .center-block{
+            text-align: center;
+        }
+
+    }
+/*@import "maincontent/maincontent.less";*/
+    .main-content{
+        .main-content();
+    }
+    .ui-dialog-content{
+        padding:2px 10px;
+        margin: 0 0 2px 0;
+        >bunn{
+            position: absolute;
+            top:0;
+            left:0;
+            background-color: white;
+        }
+    }
+}
+    .ui-datepicker-today{
+        >a{
+            background: none!important;
+            background-color: green!important;
+            color: #DDD!important;
+        }
+        >.ui-state-active{
+            color:#FFa0a0!important;
+            font-weight: bold;
+        }
+    }

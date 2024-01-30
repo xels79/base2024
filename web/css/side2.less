@@ -1,0 +1,132 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26.03.2017, 23:41:16
+    Author     : Александр
+*/
+
+@import "../less/_variables.less";
+
+.side-nav{
+    font-size: 14px;
+    position: fixed;
+    top:54px;
+    left: 0px;
+    bottom: 0;
+    right: auto;
+    border-right: 1px solid #aaa;
+    /*min-height: 372px;*/
+    padding-bottom: 54px;
+    z-index: 4;
+    >.side-nav-conteiner{
+        width:@s_menu_wt;
+        white-space: nowrap;
+        height:100%;
+        position: relative;
+        background-color: white;
+        ul,>ul{
+            >li{
+                >a{
+                    &:hover{
+                        background-color: #ccc !important;
+                    }
+                    >p{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        >ul{
+            &:last-child{
+                position: absolute;
+                bottom: 0px;
+                top:auto;
+                padding-bottom: 20px;
+            }
+            &:first-child{
+                >li{
+                    >a{
+                        >span{
+                            padding-left: 5px;
+                            >img{
+                                margin-left: -5px;
+                                width: 32px;
+                            }
+                        }
+                        background-color: white;
+                        border-bottom:1px solid #aaa;
+                        border-top: 1px solid #aaa;
+                        border-right: 1px solid #aaa;
+                    }
+                }
+            }
+            .side-nav-informer{
+                >a{
+                    border-bottom-right-radius: 5px;
+                    border-top-right-radius: 5px;
+                    z-index: 2000;
+                    .caret{
+                        padding-left: 1px;
+                    }
+                }
+            }
+            .dropdown-menu{
+                min-width: 160px;
+                margin-top:-3px;
+                border-top:none;
+                z-index:2001;
+/*                max-height:0px;
+                padding: 0px;*/
+                overflow:hidden;
+                >li{
+                    >p{
+                        display: inline-block;
+                        padding-left: 5px;
+                    }
+                    >a{
+                        color: #337ab7;
+                        p{
+                            /*margin: auto 0;*/
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+            .active>a{
+                background-color: #ddd !important;
+                >span{
+                    >img{
+                        width: 64px;
+                    }
+                }
+            }
+            >li{
+                width: (@s_menu_wt)-1px;
+                margin-top:-1px;
+                >a{
+                    width: (@s_menu_wt+1px);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    padding:0px 6px;
+                    >p,>span,>.caret{
+                        padding-top: 10px;
+                        /*padding-left: 5px;*/
+                    }
+                    >img{
+                        margin: 4px 0;
+                        padding: 0;
+                       max-width:1.9em; /* (@s_menu_wt)-11px;*/
+                    }
+                    >p{
+                        margin-left: 20px;
+                        display: inline-block;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

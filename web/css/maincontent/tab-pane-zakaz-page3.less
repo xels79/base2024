@@ -1,0 +1,259 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29.10.2018, 17:10:35
+    Author     : Александр
+*/
+
+.tab-pane-zakaz-page3(){
+    /*font-size:1.1em;*/
+    >div{
+        &:first-child{
+            padding: 4px 10px;
+            display: table;
+            width: 100%;
+            >div{
+                margin: 0;
+                padding: 0;
+                display: table-cell;
+            }
+        }
+    }
+    >.params{
+        text-align: left;
+        .dialog-control-group{
+            float: none;
+        }
+    }
+    >.dialog-row{
+        margin-top: 0px;
+        padding-bottom: 3px;
+        display: block;
+/*        &:not(:last-child){
+            border-bottom: 1px solid;
+        }*/
+    }
+    .table{
+        margin: 4px 15px;
+        width: 95%;
+        >tbody{
+            >tr{
+                /*&:first-child{*/
+                    >th{
+                        font-size: 0.9em;
+                        text-align: right;
+                        color:#ff6600;
+                    }
+                /*}*/
+                >td{
+                    .btn{
+                        margin: inherit;
+                        margin-left: -1px;
+                        width: 19px!important;
+                        /*height: 17px;*/
+                    }
+                }
+                >td,>th{
+                    border:none;
+                }
+            }
+        }
+    }
+    .table-info-part1{
+        margin-bottom: 20px;
+        >tbody{
+            >tr{
+                >th,>td{
+                    background-color: #ccc;
+                }
+                >th{
+                    &:first-child{
+                        width: 148px!important;
+                    }
+                }
+            }
+        }
+    }
+    .table-info-part{
+        >tbody{
+            .is-off{
+                >th,>td{
+                    opacity: 0.2;
+                }
+                >.allways-on{
+                    opacity: 1;                    
+                }
+            }
+            >tr{
+                >th,>td{
+                    padding: 3px 0px;
+                }
+                &:last-child{
+                    >th,>td{
+                        background-color: #ccc;
+                    }
+                    >td{
+                        padding-right: 16px;
+                        >input{
+                            width: 100%;
+                        }
+                    }
+                }
+                >th{
+                    /*text-align: right;*/
+                    &:first-child{
+                        vertical-align: middle;
+                        width: 120px;
+                    }
+                }
+                >td{
+                    input[readonly]{
+                        background-color: red;
+                        opacity:0;
+                    }
+                    &:nth-child(2){
+                        width: 120px;
+                    }
+                    textarea{
+                        width: 98%;
+                        min-height: 40px;
+                        resize: none;
+                        font-size: 0.95em;
+                        margin: 3px 8px -4px;
+                    }
+                    >.input-group{
+                        min-width: 85px;
+                        margin-left: 7px;
+                        .btn{
+                            border-radius: 0px;
+                        }
+                    }
+                    >input{
+                        margin:0 7px;
+                        width: 98%;
+                    }
+                    .m-radio{
+                        font-size: 0.5em;
+                        >span>span{
+                            padding: 2px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .table-colors{
+        >tbody{
+            >tr{
+                &:first-child{
+                    >td,>th{
+                        &:first-child{
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                >td,>th{
+                    padding: 1px 5px 1px 0px;
+                }
+                >td{
+                    font-size: 0.9em;
+                    width: 200px;
+                    .btn{
+                        border-bottom-right-radius: 2px;
+                        border-top-right-radius: 2px;
+                    }
+                    .input-group{
+                        
+                        min-width: 80px;
+                        max-width: 80px;
+                        margin: auto;
+                        /*margin-left: 7px;*/
+                    }
+                    input{
+                        width: 100px;
+                    }
+                    vertical-align: middle;
+                }
+                >th{
+                    text-align: center;
+                    color:#ff6600;
+                }
+            }
+            >.t-padding-border{
+                .padd{
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+                &:first-child{
+                    .bord{
+                        border-top: 1px solid #555555;
+                        padding-top: 5px;
+                    }                    
+                }
+                &:last-child{
+                    .bord{
+                        border-bottom: 1px solid #555555;
+                        padding-bottom: 5px;
+                    }
+                }
+                .bl{
+                    border-left: 1px solid #555555;
+                }
+                .br{
+                    border-right: 1px solid #555555;
+                }
+            }
+        }                    
+    }
+    .table-colors2{
+        margin: 0;
+        .btn{
+            font-size:12px;
+            margin:2px;
+        }
+        >tbody>tr{
+            >td{
+                font-size: 0.75em;
+                font-weight: bold;
+                >input{
+                    padding: 0;
+                }
+                >.input-group{
+                    >.form-control{
+                        height: 18px;
+                    }
+                    >.input-group-btn>.btn{
+                        height: 18px;
+                    }
+                }
+            }
+            &:nth-child(2n){
+                >td{
+                    font-size: 0.5em;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .form-control{
+        height: 22px;
+        font-size: 0.8em;
+        padding: 2px 3px;
+    }
+    .dropdown-menu{
+        max-height: 120px;
+        min-height: 10px;
+        overflow: hidden;
+        overflow-y: auto;
+        >li{
+            >a{
+                font-size: 0.8em;
+                padding:2px 10px;
+            }
+        }
+    }
+
+}
