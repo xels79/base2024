@@ -34,7 +34,7 @@ class SkladBumaga extends \yii\db\ActiveRecord
         return [
             [['color_ref', 'firm_ref'], 'required'],
             [['color_ref', 'firm_ref'], 'integer'],
-            [['sklad', 'rezerv'], 'number'],
+            [['sklad', 'rezerv', 'lastupdate'], 'number'],
             [['color_ref'], 'exist', 'skipOnError' => true, 'targetClass' => SkladBumagaInfo::className(), 'targetAttribute' => ['color_ref' => 'id']],
             [['firm_ref'], 'exist', 'skipOnError' => true, 'targetClass' => SkladBumagaFirms::className(), 'targetAttribute' => ['firm_ref' => 'id']],
         ];
@@ -69,4 +69,8 @@ class SkladBumaga extends \yii\db\ActiveRecord
     {
         return $this->hasOne(SkladBumagaFirms::className(), ['id' => 'firm_ref']);
     }
+    public function beforeValidate(){
+        $this->lastupdate = time();
+    }
+
 }

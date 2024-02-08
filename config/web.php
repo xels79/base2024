@@ -9,7 +9,8 @@ $config = [
     'language'      => 'ru-RU',
     'timeZone'      => 'Europe/Moscow',
     'aliases'       => [
-        '@vendor'=>'/var/www/u0931523/data/programs/yiicore/vendor',
+        //'@vendor'=>'/var/www/u0931523/data/programs/yiicore/vendor',
+        '@vendor'=>'/home/xel_s/sites/tests/yiicore/vendor', 
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
         '@file'      => '@app/baseFiles',
@@ -27,11 +28,11 @@ $config = [
             'appendTimestamp' => true,
             'bundles'         => [
                 'yii\bootstrap\BootstrapAsset' => [
-                    'sourcePath' => null,
+                    'sourcePath' => false,//'@app/web/less/',
                     'basePath'   => '@webroot',
                     'baseUrl'    => '@web',
                     'css'        => [
-                        'less/bootstrap.css'],
+                        'less/bootstrap.less'],
                 ],
             ],
             'converter'       => [
@@ -39,7 +40,9 @@ $config = [
                 'commands' => [
                     'less' => [
                         'css',
-                        '/var/www/u0931523/data/nodejs/bin/node /var/www/u0931523/data/node_modules/less/bin/lessc {from} {to} --no-color -x ---source-map'],
+                        //'/var/www/u0931523/data/nodejs/bin/node /var/www/u0931523/data/node_modules/less/bin/lessc {from} {to} --no-color -x ---source-map'
+                        '/home/xel_s/.nvm/versions/node/v20.8.0/bin/lessc {from} {to} --no-color -x --source-map -rp="/basetest/" -ru'
+                    ],
                 //'ts' => ['js', 'tsc --out { to} {from}'],
                 ],
             ],

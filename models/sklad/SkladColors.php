@@ -31,7 +31,7 @@ class SkladColors extends \yii\db\ActiveRecord
     {
         return [
             [['serias_ref', 'color_ref','article'], 'required'],
-            [['serias_ref', 'color_ref','article'], 'integer'],
+            [['serias_ref', 'color_ref','article', 'lastupdate'], 'integer'],
             [['proizvodstvo','sklad','procurement'], 'number'],
             [['proizvodstvo','sklad','procurement'], 'default','value'=>0],
             [['color_ref'], 'exist', 'skipOnError' => true, 'targetClass' => SkladColorsInfo::className(), 'targetAttribute' => ['color_ref' => 'id']],
@@ -52,7 +52,7 @@ class SkladColors extends \yii\db\ActiveRecord
             'proizvodstvo'=>'Пр-во',
             'sklad'=>'Склад',
             'procurement'=>'Купить',
-
+            'lastupdate'=>'Обновлено'
         ];
     }
 
@@ -70,5 +70,10 @@ class SkladColors extends \yii\db\ActiveRecord
     public function getSeriasRef()
     {
         return $this->hasOne(SkladColorSerias::className(), ['id' => 'serias_ref']);
+    }
+
+
+    public function beforeValidate(){
+        $this->lastupdate = time();
     }
 }

@@ -28,7 +28,7 @@ class SkladColorOtherDate extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['proizvodstvo', 'sklad', 'procurement'], 'number'],
+            [['proizvodstvo', 'sklad', 'procurement', 'lastupdate'], 'number'],
         ];
     }
 
@@ -44,4 +44,8 @@ class SkladColorOtherDate extends \yii\db\ActiveRecord
             'procurement' => 'Купить',
         ];
     }
+    public function beforeValidate(){
+        $this->lastupdate = time();
+    }
+
 }

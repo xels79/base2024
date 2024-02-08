@@ -41,18 +41,18 @@ return [
         ],
 
         'cache' => [
-        //    'class' => 'yii\caching\FileCache',
+           'class' => 'yii\caching\FileCache',
 			
-            'class'        => 'yii\caching\MemCache',
-            'useMemcached' => true, //$_SERVER['SERVER_SOFTWARE']!=='Apache/2.4.10 (Win64) PHP/5.6.29',
+            // 'class'        => 'yii\caching\MemCache',
+            // 'useMemcached' => true, //$_SERVER['SERVER_SOFTWARE']!=='Apache/2.4.10 (Win64) PHP/5.6.29',
           
-            'servers'      => [
-                [
-                    'host'   => '127.0.0.1',
-                    'port'   => 11212,
-                    'weight' => 64,
-                ],
-            ],		
+            // 'servers'      => [
+            //     [
+            //         'host'   => '127.0.0.1',
+            //         'port'   => 11212,
+            //         'weight' => 64,
+            //     ],
+            // ],		
         ],
         'log' => [
             'targets' => [

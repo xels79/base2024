@@ -540,6 +540,9 @@ abstract class ControllerMain extends Controller {
 
     private function userInfoUpdate(&$action, $logout = false) {
         $user = self::$user_cache;
+        // echo \yii\helpers\VarDumper::dumpAsString($user);
+        // echo \yii\helpers\VarDumper::dumpAsString(Yii::$app->user->identity);
+        // exit(0);
         if (!$user) {
             $user = \app\models\TblUser::findOne(Yii::$app->user->identity->id);
             self::$user_cache = $user;
@@ -579,6 +582,7 @@ abstract class ControllerMain extends Controller {
             $this->setHomeUrl();
 
             $this->logOrErr = $action->id == 'logout' || $action->id == 'login' || $action->id == 'error' || $action->id == 'blocked';
+            
             if (!\Yii::$app->user->isGuest) {
                 $this->role = \Yii::$app->user->identity->role;
                 if ($action->id !== 'blocked')
@@ -597,7 +601,9 @@ abstract class ControllerMain extends Controller {
                 }
             } elseif (!$this->logOrErr) {
                 Yii::trace($this->id, 'controllerMain');
-                $this->userInfoUpdate($action, true);
+                if (\Yii::$app->user->identity){
+                    $this->userInfoUpdate($action, true);
+                }
                 if ($this->id == 'zakaz/zakazlist' && $action->id == 'view') {
                     $this->redirect(['site/login'], 401);
                 } else {

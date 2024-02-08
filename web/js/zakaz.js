@@ -2219,17 +2219,17 @@ var zakaz_controller = {
     },
 };
 $.fn.includeJS( [
-    '/js/zakaz-executers.js',
-    '/js/zakaz-material.js',
-    '/js/zakaz-material-block0.js',
-    '/js/zakaz-material-block1.js',
-    '/js/zakaz-material-block2.js',
-    '/js/zakaz-material-block4.js',
-    '/js/zakaz-material-block10.js',
-    '/js/zakaz-material-block11.js',
-    '/js/zakaz-params.js',
-    '/js/zakaz-file.js',
-    '/js/zakaz-postprint.js',
+    'js/zakaz-executers.js',
+    'js/zakaz-material.js',
+    'js/zakaz-material-block0.js',
+    'js/zakaz-material-block1.js',
+    'js/zakaz-material-block2.js',
+    'js/zakaz-material-block4.js',
+    'js/zakaz-material-block10.js',
+    'js/zakaz-material-block11.js',
+    'js/zakaz-params.js',
+    'js/zakaz-file.js',
+    'js/zakaz-postprint.js',
 ], function ( ) {
     ( function ( $ ) {
         $.widget( "custom.zakazAddEditController", $.custom.maindialog, $.extend( {}, zakaz_controller, zakaz_material, block_constuktor, block_visitki, block_block, zakaz_executers, zakaz_params, zakaz_file, block_paket, zakaz_postprint, block_paket_p, block_suvenirka ) );

@@ -5,7 +5,7 @@ and open the template in the editor.
 */
 /* 
     Created on : 08.02.2017, 16:21:28
-    Author     : Александр
+    Author     : Александр 
 */
 @import "../less/_variables.less";
 /*@import "../less/sidemenu.less";*/
@@ -68,9 +68,12 @@ body{
         >.with-logo{
             height:50px;
         }
+        /*
+
         >form{
-            /*display: table-row;*/
+            display: table-row;
         }
+        */
         .btn{
             width: 100px;
         }
@@ -539,7 +542,9 @@ body{
     z-index:1890;
     background: none;
     background-color: white;
+    /*
     webkit-box-shadow: 5px 15px 27px rgba(0, 0, 0, 0.5);
+    */
     box-shadow: 5px 15px 27px rgba(0, 0, 0, 0.5);
     .ui-dialog-titlebar{
         button{
@@ -861,11 +866,11 @@ body{
                     }
                     .btn-main{
                         background-color: transparent;
-                        background: url(/pic/green.png) no-repeat;
+                        background: url(pic/green.png) no-repeat;
                         background-size: contain;
                         background-position: center;
                         &:hover{
-                            background: url(/pic/blue.png) no-repeat;
+                            background: url(pic/blue.png) no-repeat;
                             background-size: contain;
                             background-position: center;
                             color:white;
@@ -906,7 +911,7 @@ body{
                     >.all{
                         height: 100%;
                         width:100px;
-                        background:url(/pic/button_main_page/j_iskati_1.png) no-repeat;
+                        background:url(pic/button_main_page/j_iskati_1.png) no-repeat;
                         background-size: contain;
                         >input,>.arr{
                             display: none;
@@ -918,7 +923,7 @@ body{
                     >.fnd{
                         height: 100%;
                         width:175px;
-                        background:url(/pic/button_main_page/j_iskati_2.png) no-repeat;
+                        background:url(pic/button_main_page/j_iskati_2.png) no-repeat;
                         background-size: contain;
                         position: relative;
                         >.arr{
@@ -927,7 +932,7 @@ body{
                             width:15px;
                             height: 15px;
                             right:10px;
-                            background:url(/pic/button_main_page/j_iskati_2_arr.png) no-repeat;
+                            background:url(pic/button_main_page/j_iskati_2_arr.png) no-repeat;
                             background-size: contain;
                             transition: transform 0.5s;
                             transform: rotate(180deg);
@@ -1029,11 +1034,6 @@ body{
                     }
                     >.last{
                         background-color:transparent!important;
-                    }
-
-                }
-                .filter-tr{
-                    >td{
                     }
                 }
                 .filter-has-selected{
@@ -1228,9 +1228,6 @@ body{
         background-color: #BBB;
         opacity: 0.1;
     }
-    .ui-dialog-content{
-        /*background-color: white;*/
-    }
 }
 .view-dialog{
     .ui-dialog-buttonpane{
@@ -1383,9 +1380,6 @@ body{
         }
         .img1,.img2{
             max-width: 320px;
-        }
-        .img1{
-            /*float: left;*/
         }
         .img2{
             left:340px;
@@ -1606,26 +1600,6 @@ body{
         display: block!important;
         .table2{
             display: block!important;
-            [id^=view-files]{
-                >div{
-/*                    max-height: 325px;
-                    max-width: 325px;*/
-                    /*min-height: 520px!important;*/
-                    /*background-color: red!important;*/
-                    >img{
-/*                        max-height: 515px!important;
-                        max-width:890px!important;*/
-                        /*height: 100%!important;;*/
-                    }/*
-*/                    >iframe{
-                        /*max-height: 515px!important;*/
-                        /*min-height: 515px!important;*/
-                        /*max-width:890px!important;*/
-                        /*height: 100%!important;*/
-                    }/*
-*/
-                }
-            }
         }
     }
 }
@@ -2218,9 +2192,6 @@ body{
     }
     >.mat_blockf-button{
         width: 100%;
-        >div{
-            /*margin: 2px auto;*/
-        }
     }
     >.mat_blockf-content{
         margin-top: 5px;
@@ -2291,7 +2262,7 @@ body{
 .oplata{
     @placeholdercolor:#03df03;
     @placeholderopacity:0.7;
-    pading: 10px 20px;
+    padding: 10px 20px;
     >caption{
         font-size: 12px;
         >span{
@@ -2407,7 +2378,7 @@ body{
             white-space: nowrap;
             overflow: hidden;            
         }
-        .CInRub,{
+        .CInRub{
             max-width: 90px;
             color:#33CC33;
             text-align: center;
@@ -2532,50 +2503,50 @@ body{
 }
 .b-plus{
     color:black;
-    background: url(/pic/button/b-green.png) no-repeat;
+    background: url(pic/button/b-green.png) no-repeat;
     background-size: contain;
     background-position: center;
     &:hover{
-        background: url(/pic/button/b-green-h.png) no-repeat;
+        background: url(pic/button/b-green-h.png) no-repeat;
         background-size: contain;
         background-position: center;        
     }
 }
 .b-minus{
     color:white;
-    background: url(/pic/button/b-red.png) no-repeat;
+    background: url(pic/button/b-red.png) no-repeat;
     background-size: contain;
     background-position: center;
     &:hover{
-        background: url(/pic/button/b-red-h.png) no-repeat;
+        background: url(pic/button/b-red-h.png) no-repeat;
         background-size: contain;
         background-position: center;        
     }
 }
 .b-plus-left{
     color:black;
-    background: url(/pic/button/b-left-green.png) no-repeat;
+    background: url(pic/button/b-left-green.png) no-repeat;
     background-size: contain;
     background-position: center right;
     text-align: right;
     border-top-right-radius:0;
     border-bottom-right-radius:0;
     &:hover{
-        background: url(/pic/button/b-left-green-h.png) no-repeat;
+        background: url(pic/button/b-left-green-h.png) no-repeat;
         background-size: contain;
         background-position: center right;
     }
 }
 .b-minus-right{
     color:black;
-    background: url(/pic/button/b-right-red.png) no-repeat;
+    background: url(pic/button/b-right-red.png) no-repeat;
     background-size: contain;
     background-position: center left;
     text-align: left;
     border-top-left-radius:0;
     border-bottom-left-radius:0;
     &:hover{
-        background: url(/pic/button/b-right-red-h.png) no-repeat;
+        background: url(pic/button/b-right-red-h.png) no-repeat;
         background-size: contain;
         background-position: center left;
     }
@@ -2717,19 +2688,19 @@ body{
 .btn-srochno{
     min-height:45px;
     min-width:190px!important;
-    background:url(/pic/button_main_page/j_srochno_1.png) no-repeat center;
+    background:url(pic/button_main_page/j_srochno_1.png) no-repeat center;
     background-size: 100% 100%;
     &:hover{
-        background:url(/pic/button_main_page/j_srochno_1_hover.png) no-repeat center;
+        background:url(pic/button_main_page/j_srochno_1_hover.png) no-repeat center;
         background-size: 100% 100%;
     }
 
 }
 .btn-srochno-danger{
-    background:url(/pic/button_main_page/j_srochno_2.png) no-repeat center;
+    background:url(pic/button_main_page/j_srochno_2.png) no-repeat center;
     background-size: 100% 100%;
     &:hover{
-        background:url(/pic/button_main_page/j_srochno_2_hover.png) no-repeat center;
+        background:url(pic/button_main_page/j_srochno_2_hover.png) no-repeat center;
         background-size: 100% 100%;
     }
  
@@ -3241,35 +3212,6 @@ body{
     z-index: 50000!important;
 }
 
-.field-mail-mailbody{
-/*    .tox-toolbar,.tox-toolbar-overlord{
-        background-color: red!important;
-        .tox-toolbar__group{
-            >.tox-tbtn {
-                align-items: center;
-                background: 0 0;
-                border: 0;
-                border-radius: 3px;
-                box-shadow: none;
-                color: #222f3e;
-                display: flex;
-                flex: 0 0 auto;
-                font-size: 9px;
-                font-style: normal;
-                font-weight: 200;
-                height: 20px;
-                justify-content: center;
-                margin: 1px 0 0px 0;
-                outline: 0;
-                overflow: hidden;
-                padding: 0;
-                text-transform: normal;
-                width: 20px;
-            }
-            
-        }
-    }*/
-}
 
 .tox-dialog{
     z-index: 50010!important;
@@ -3281,8 +3223,6 @@ body{
         >.ui-dialog-title{
             color:red;
         }
-    }
-    >.ui-dialog-content{
     }
     .ui-dialog-buttonpane{
         background-color: transparent;

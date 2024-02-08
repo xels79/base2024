@@ -58,7 +58,7 @@ class SkladPaket extends \yii\db\ActiveRecord
     {
         return [
             [['color_ref', 'firm_ref'], 'required'],
-            [['color_ref', 'firm_ref'], 'integer'],
+            [['color_ref', 'firm_ref', 'lastupdate'], 'integer'],
             [['coast_sz_38x50', 'sklad_sz_38x50', 'rezerv_sz_38x50', 'coast_sz_30x40', 'sklad_sz_30x40', 'rezerv_sz_30x40', 'coast_sz_22x34', 'sklad_sz_22x34', 'rezerv_sz_22x34', 'coast_sz_36x45', 'sklad_sz_36x45', 'rezerv_sz_36x45', 'coast_sz_45x50', 'sklad_sz_45x50', 'rezerv_sz_45x50', 'coast_sz_60x50', 'sklad_sz_60x50', 'rezerv_sz_60x50', 'coast_sz_70x50', 'sklad_sz_70x50', 'rezerv_sz_70x50', 'coast_sz_50x60', 'sklad_sz_50x60', 'rezerv_sz_50x60', 'coast_sz_70x60', 'sklad_sz_70x60', 'rezerv_sz_70x60'], 'number'],
             [['color_ref'], 'exist', 'skipOnError' => true, 'targetClass' => SkladPaketInfo::className(), 'targetAttribute' => ['color_ref' => 'id']],
             [['firm_ref'], 'exist', 'skipOnError' => true, 'targetClass' => SkladPaketFirms::className(), 'targetAttribute' => ['firm_ref' => 'id']],
@@ -119,4 +119,8 @@ class SkladPaket extends \yii\db\ActiveRecord
     {
         return $this->hasOne(SkladPaketFirms::className(), ['id' => 'firm_ref']);
     }
+    public function beforeValidate(){
+        $this->lastupdate = time();
+    }
+
 }
