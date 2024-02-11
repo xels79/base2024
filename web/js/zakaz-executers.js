@@ -258,7 +258,7 @@ var zakaz_executers = {
                     href: 'http://asterionspb.ru/',
                     target: '_blank'
                 } ).append( $( '<img>' ).attr( {
-                    src: '/pic/button_main_page/J_cena.png',
+                    src: 'pic/button_main_page/J_cena.png',
                     height: 30
                 } ) ) )
                 .append( $( '<div>' ) )

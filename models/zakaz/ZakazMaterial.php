@@ -133,7 +133,7 @@ abstract class ZakazMaterial extends ZakazPodryadview{
             }elseif($name==='Чей'){
                 return $this->_materialAll[$id]['supplierTypeText'];//supplierTypeText
             }elseif(isset($this->_materialAll[$id]['struct'])){
-                if ($this->_materialAll[$id]['struct'][$name]){
+                if (isset($this->_materialAll[$id]['struct'][$name])){
                     return $this->_materialAll[$id]['struct'][$name];
                 }elseif ($name==='Размер' && isset($this->_materialAll[$id]['struct']['Размер листа'])){
                     return $this->_materialAll[$id]['struct']['Размер листа'];

@@ -28,7 +28,7 @@ class ZBumFormats extends Action{
     public $retValue;
     public $bumName;
     public function calkBumFormat(){
-        if ($bumformat!==null) return;
+        if ($this->bumformat!==null) return;
         if (!$this->mat_id=Yii::$app->request->post('mat_id')){
             $this->errorContent= ['error'=>true,'errorText'=>'Не передан id материала','errorHead'=>'Ошибка данных'];
             $this->hasError=true;

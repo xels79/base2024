@@ -89,7 +89,7 @@ class LifCalc2 extends LifCalcBase {
         $rVal['tmp1'] = $this->calcCount( $wLif, $hLif, $wLifN, $hLifN );
         $rVal['tabels'] = $this->drawTables( $rVal['tmp1'] );
 
-        $cutArea = $rVal['tmp1']['cutArea'] + $rVal['tmp1']['cutW'] * $rVal['tmp1']['h'] + isset( $rVal['tmp1']['tbl2'] ) ? $rVal['tmp1']['tbl2']['cutArea'] : 0;
+        $cutArea = $rVal['tmp1']['cutArea'] + $rVal['tmp1']['cutW'] * $rVal['tmp1']['h'] + (isset( $rVal['tmp1']['tbl2'] ) ? $rVal['tmp1']['tbl2']['cutArea'] : 0);
         if ( $this->mm )
                 $rVal['lifSizes'] = ['w'  => $rVal['tmp1']['w'], 'h'  => $rVal['tmp1']['h'],
                 'wn' => $rVal['tmp1']['wn'], 'hn' => $rVal['tmp1']['hn']];

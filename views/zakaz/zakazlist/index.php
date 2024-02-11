@@ -169,10 +169,10 @@ JSRegister::begin( [
                     ?></div>
                 <?php endif; ?>
                 <div class="re-print"><?=
-                    Html::a( Html::img( '/pic/button_main_page/j_perepechatka_' . ($showReprint ? '1' : '2') . '.png', [
+                    Html::a( Html::img( 'pic/button_main_page/j_perepechatka_' . ($showReprint ? '1' : '2') . '.png', [
                                 'width'        => '100px',
                                 'height'       => '30px',
-                                'data-nexturl' => '/pic/button_main_page/j_perepechatka_' . ($showReprint ? '2' : '1') . '.png'
+                                'data-nexturl' => 'pic/button_main_page/j_perepechatka_' . ($showReprint ? '2' : '1') . '.png'
                             ] ), '#', [
                         'id'           => 'show-reprint',
                         'data-reprint' => $showReprint ? 'true' : 'false'

@@ -1207,7 +1207,7 @@ var zakaz_controller = {
             //Zakaz-stage
             if ( !this.options.isDisainer ) {
                 let img_compl = $( '<img>' ).attr( {
-                    src: '/pic/sdano.png',
+                    src: 'pic/sdano.png',
                     height: '140px'
                 } ).css( {
                     position: 'absolute',

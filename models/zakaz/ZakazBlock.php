@@ -104,7 +104,7 @@ abstract class ZakazBlock extends ZakazMaterial {
         }
         $blockOpt = Json::decode($this["material_block_format$key"] ? $this["material_block_format$key"] : '{"block":{}}');
         $swapFormat = false;
-        if (is_array($blockOpt['block']) && array_key_exists('var', $blockOpt['block']) && $blockOpt['block']['var'] == 2 && (int) $formatTmp[0] < (int) $formatTmp[1]) {
+        if (isset($blockOpt['block']) && is_array($blockOpt['block']) && array_key_exists('var', $blockOpt['block']) && $blockOpt['block']['var'] == 2 && (int) $formatTmp[0] < (int) $formatTmp[1]) {
             $swapFormat = true;
         }
 //        if (is_array($blockOpt['block']) && array_key_exists('blockWidth', $blockOpt['block']) && array_key_exists('blockHeight', $blockOpt['block']) && $blockOpt['block']['blockWidth'] < $blockOpt['block']['blockHeight']) {
@@ -185,7 +185,7 @@ abstract class ZakazBlock extends ZakazMaterial {
             if (count($format) < 2)
                 $format = [0, 0];
             $liffSizeTmp = $this->formatStringProceed($this->materialColumn('Размер листа', $id));
-            if (is_array($blockOpt['block']) && array_key_exists('var', $blockOpt['block'])) {
+            if (isset($blockOpt['block']) && is_array($blockOpt['block']) && array_key_exists('var', $blockOpt['block'])) {
                 if ($blockOpt['block']['var'] == 2) {
                     //if ((int) $format[0] < (int) $format[1]) {
                     $formatTmp = $this->swapFormat($formatTmp);

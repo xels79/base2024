@@ -94,7 +94,9 @@ class Zakaz extends ZakazRules {
     public function getFileCount() {
         if ($this->isNewRecord)
             return 0;
-        $zipPath = \app\components\MyHelplers::zipPathToStore($zakazId);
+        //Ошибка с ноиером заказа
+        //Было так -> $zipPath = \app\components\MyHelplers::zipPathToStore($zakazId);
+        $zipPath = \app\components\MyHelplers::zipPathToStore($this->zak_id);
         if (file_exists($zipPath)) {
             $zip = new \ZipArchive();
             if ($zip->open($zipPath) === true) {
@@ -325,7 +327,8 @@ class Zakaz extends ZakazRules {
 //        foreach ($oldVal as $el) {
 //            $el->delete();
 //        }
-        Yii::debug(\yii\helpers\VarDumper::dumpAsString($oldVal), 'save - material');
+        //Исправление версии php
+        //Yii::debug(\yii\helpers\VarDumper::dumpAsString($oldVal), 'save - material');
         return $cont;
     }
 

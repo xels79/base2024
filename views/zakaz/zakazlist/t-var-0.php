@@ -37,7 +37,7 @@ $materialCount = $model->isMaterialSet;
 
     </tr>
     <tr class="btt bold">
-        <th class="btt"><div class="ramka md"><?= $materialPos[$model["material_is_on_sklad$key"]] ?></div></th>
+        <th class="btt"><div class="ramka md"><?= isset($materialPos[$model["material_is_on_sklad$key"]])?$materialPos[$model["material_is_on_sklad$key"]]:"" ?></div></th>
         <td colspan="2" class="rt">Кол-во листов</td>
         <td colspan="1"><div class="ramka md"><?= $model->materialColumn('Количество', $i) ?></div></td>
         <td></td>
